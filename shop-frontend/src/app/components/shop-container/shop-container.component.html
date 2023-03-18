@@ -1,0 +1,5 @@
+<div>
+    <h1> Mini Market Products</h1>
+    <app-product-grid (selectedProductsEmitter) = "sendCart($event)"></app-product-grid>
+    <app-cart [deliveryDates]="deliveryDates"></app-cart>
+</div>
