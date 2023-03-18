@@ -1,0 +1,22 @@
+<div *ngIf="deliveryDates && deliveryDates.length > 0">
+    <h2>Delivery Dates:</h2>
+    <table mat-table [dataSource]="deliveryDates">
+       <ng-container matColumnDef="postalCode">
+            <th mat-header-cell *matHeaderCellDef>postalCode</th>
+            <td mat-cell *matCellDef="let date">{{ date.postalCode }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="deliveryDate">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let date">{{ date.deliveryDate }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="isGreenDelivery">
+        <th mat-header-cell *matHeaderCellDef>isGreenDelivery</th>
+        <td mat-cell *matCellDef="let date">{{ date.greenDelivery ? "True" : "False" }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['postalCode', 'deliveryDate', 'isGreenDelivery']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['postalCode', 'deliveryDate', 'isGreenDelivery']"></tr>
+    </table>
+</div>

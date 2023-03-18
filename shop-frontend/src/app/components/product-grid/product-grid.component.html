@@ -1,0 +1,14 @@
+<div class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>P-Name : {{ product.name }}</h2>
+      <p>Price : {{ product.price }}</p>
+      <p>Delivery Days : {{ product.deliveryDays}}</p>
+      <p>Product Type :  {{ product.productType }}</p>
+      <p>Days In Advance : {{ product.daysInAdvance }}</p>
+      <mat-checkbox [(ngModel)]="product.selected"></mat-checkbox>
+    </div>
+</div>
+
+
+<button mat-button color="primary" (click)="sendProducts()">Send Products</button>

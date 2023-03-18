@@ -7,4 +7,4 @@ RUN npm run build --prod
 
 FROM nginx:alpine
 EXPOSE 80
-COPY --from=builder /app/dist/city-list/ /usr/share/nginx/html
+COPY --from=builder /app/dist/shop-frontend /usr/share/nginx/html
